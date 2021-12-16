@@ -26,37 +26,47 @@ class Locations extends React.Component {
     }
     
     handleShowOrHide = () =>{
+        if(this.state.chooseOptions === "Show Locations"){
             this.setState ({
-                chooseOptions: "Hide Locations",
+                chooseOptions: "Hide Locations"
+            })
+        } else {
+            this.setState ({
+                chooseOptions: "Show Locations"
+            })
+        }
+
+        if(!this.state.display ){
+            this.setState ({ 
                 display: true,
             })
+        } else {
+            this.setState ({ 
+                display: false,
+            })
+        }
+            
         
-    }
 
-    // handleHide = () =>{
-    //     if(this.state.chooseOptions){
-    //         this.setState ({
-    //             chooseOptions: "Show Locations",
-    //             showOrHide: true,
-    //         })
-    //     }
-    // }
+    }
 
     render(){
         let {allLocationsInfo} = this.state;
         let displayLocations = allLocationsInfo.map(location => {
             return (
-                <ul className="locations">
-                    <li>Name: {location.name}</li>
-                    <li>Climate: {location.climate}</li>
-                    <li>Terrain: {location.terrain}</li>
+                <ul>
+                    <li>
+                        <div>Name: {location.name}</div>
+                        <div>Climate: {location.climate}</div>
+                        <div>Terrain: {location.terrain}</div>
+                    </li>
                 </ul>
             )
         })
 
 
         return(
-            <div id="Locations-page">
+            <div className="locations">
                 <div id="LocationsPage-title">List of Locations</div>
                 <button type="submit" onClick={this.handleShowOrHide}>{this.state.chooseOptions}</button>
                 { this.state.display && 
@@ -64,9 +74,7 @@ class Locations extends React.Component {
                 }
                 { !this.state.display && 
                     <div></div>
-                }
-              
-                
+                } 
             </div>
         )
     }

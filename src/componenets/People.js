@@ -33,34 +33,31 @@ class People extends React.Component {
 
     handleSubmit =(e)=> {
         e.preventDefault();
-        let userInput = this.state.allPeopleInfo.filter(people => people.name===this.state.currentInput);
-        this.setState ({
-            searchResult: userInput,
-        })
+        let userInput = this.state.allPeopleInfo.find(people => people.name===this.state.currentInput);
+            this.setState ({
+                searchResult: userInput,
+            }) 
     }
     
     render(){
-       
-        let displayList = this.state.searchResult.map(people => {
-            return (
-                <div className="people"> 
-                    <h2>Name: {people.name}</h2>
-                    <h2>Age: {people.age}</h2>
-                    <h2>Gender: {people.gender}</h2>
-                </div>
-            )
-        })
-
-        
+        let {searchResult} = this.state;
 
         return(
-            <div id="people-page">
-                <form onClick={this.handleSubmit}>
-                    <div id="peoplePage-title">Search for a Person</div>
+            
+            <div className="people">
+                <div id="peoplePage-title">Search for a Person</div>
+                <form onSubmit={this.handleSubmit}>
                     <input type="text" onInput={this.handleInput} placeholder="Find Your Person"/>
                     <button type="submit">Submit</button>
                 </form>
-                {displayList}
+                { searchResult
+                    ? <div> 
+                        <h2>Name: {searchResult.name}</h2>
+                        <h2>Age: {searchResult.age}</h2>
+                        <h2>Gender: {searchResult.gender}</h2>
+                    </div>
+                    : "Not Found"
+                } 
             </div>
             
         )
