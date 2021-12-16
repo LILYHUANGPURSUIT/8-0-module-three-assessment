@@ -50,8 +50,7 @@ class Movies extends React.Component {
                         <h2>Title: {selected.title}</h2>
                         <h2>Release: {selected.release_date}</h2>
                         <h2>Descrition: {selected.description}</h2>
-                    </div> || null
-                    
+                    </div> 
                 }
             </div>
         )

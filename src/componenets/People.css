@@ -1,0 +1,16 @@
+#people-page {
+    text-align: center;
+}
+
+#peoplePage-title {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 20px;
+}
+
+input, button {
+    height: 40px;
+    margin: 6px;
+    text-align: center;
+    border-radius: 20%;
+}
