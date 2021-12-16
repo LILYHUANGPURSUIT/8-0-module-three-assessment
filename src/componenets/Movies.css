@@ -1,0 +1,18 @@
+#movies-page {
+    text-align: center;
+}
+
+#moviesPage-title {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 20px;
+}
+
+select {
+    height: 40px;
+    border-radius: 20%;
+}
+
+.optionsToSelect {
+    text-align: center;
+}
