@@ -45,11 +45,14 @@ class Movies extends React.Component {
                     <option></option>
                     {movieOptions}
                 </select>
-
-                <h2>Title: {selected?.title}</h2>
-                <h2>Release: {selected?.release_date}</h2>
-                <h2>Descrition: {selected?.description}</h2>
-               
+                {   selected && 
+                    <div>
+                        <h2>Title: {selected.title}</h2>
+                        <h2>Release: {selected.release_date}</h2>
+                        <h2>Descrition: {selected.description}</h2>
+                    </div>
+                    
+                }
             </div>
         )
     }
