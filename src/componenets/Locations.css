@@ -1,3 +1,21 @@
 .locations {
     text-align: center;
+    font-size: large;
+    font-weight: bold;
 }
+
+#locationsPage-title {
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.locationsInfoContainer {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 5%;
+}
+
+
+
+

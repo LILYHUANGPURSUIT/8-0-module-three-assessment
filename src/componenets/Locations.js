@@ -54,7 +54,7 @@ class Locations extends React.Component {
         let {allLocationsInfo} = this.state;
         let displayLocations = allLocationsInfo.map(location => {
             return (
-                <ul>
+                <ul className="locationsInfo">
                     <li>
                         <div>Name: {location.name}</div>
                         <div>Climate: {location.climate}</div>
@@ -67,10 +67,10 @@ class Locations extends React.Component {
 
         return(
             <div className="locations">
-                <div id="LocationsPage-title">List of Locations</div>
+                <div id="locationsPage-title">List of Locations</div>
                 <button type="submit" onClick={this.handleShowOrHide}>{this.state.chooseOptions}</button>
                 { this.state.display && 
-                    <div>{displayLocations}</div>
+                    <div className="locationsInfoContainer">{displayLocations}</div>
                 }
                 { !this.state.display && 
                     <div></div>

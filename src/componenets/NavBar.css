@@ -3,11 +3,16 @@
     grid-template-columns: repeat(4,1fr);
     text-align: center;
     font-size: xx-large;
-    margin: 20px;;
-    background-color: rgb(150, 230, 150);
+    margin: 3px;
+    padding: 15px;
+    border-radius: 30%;
+    /* background-color: rgb(150, 230, 150); */
+    background-image: url(https://i.pinimg.com/736x/48/38/26/4838266a1e0743ac9b54c9e115f2a877.jpg);
 }
+
 
 #home-logo {
     width: 50px;
     height: 50px;
+    opacity: 0.8;
 }

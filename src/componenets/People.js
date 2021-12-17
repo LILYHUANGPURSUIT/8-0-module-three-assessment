@@ -33,7 +33,7 @@ class People extends React.Component {
 
     handleSubmit =(e)=> {
         e.preventDefault();
-        let userInput = this.state.allPeopleInfo.find(people => people.name===this.state.currentInput);
+        let userInput = this.state.allPeopleInfo.find(people => people.name.toLowerCase()===this.state.currentInput.toLowerCase());
             this.setState ({
                 searchResult: userInput,
             }) 
@@ -50,14 +50,16 @@ class People extends React.Component {
                     <input type="text" onInput={this.handleInput} placeholder="Find Your Person"/>
                     <button type="submit">Submit</button>
                 </form>
-                { searchResult
-                    ? <div> 
+                { searchResult &&
+                    <div className="selectedMovieInfo"> 
                         <h2>Name: {searchResult.name}</h2>
                         <h2>Age: {searchResult.age}</h2>
                         <h2>Gender: {searchResult.gender}</h2>
                     </div>
-                    : "Not Found"
                 } 
+                { !searchResult && 
+                    <div className="searchNotFound">Not Found!</div>
+                }
             </div>
             
         )

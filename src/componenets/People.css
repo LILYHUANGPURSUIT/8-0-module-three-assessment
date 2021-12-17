@@ -1,4 +1,4 @@
-#people-page {
+.people {
     text-align: center;
 }
 
@@ -13,4 +13,13 @@ input, button {
     margin: 6px;
     text-align: center;
     border-radius: 20%;
+}
+
+.selectedPeopleInfo {
+    margin-top: 5%;
+}
+
+.searchNotFound{
+    margin: 50px;
+    font-size: 30px;
 }

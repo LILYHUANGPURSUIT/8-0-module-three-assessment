@@ -9,7 +9,7 @@ import Locations from "./componenets/Locations";
 
 function App() {
   return (
-    <div>
+    <div  className="app">
       <NavBar />
       <main>
         <Switch>
