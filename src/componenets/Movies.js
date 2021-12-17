@@ -33,22 +33,22 @@ class Movies extends React.Component {
     render(){
         let {allMoviesInfo} = this.state;
         let movieOptions = allMoviesInfo.map(movie => {
-            return <option>{movie.title}</option>
+            return <option className="movies">{movie.title}</option>
         })
 
         let selected = allMoviesInfo.find(movie => movie.title===this.state.currentSelected);
 
         return(
-            <div className="movies">
-                <div id="moviesPage-title">Select a Movie</div>
+            <div id="movies-page">
+                <h1 id="moviesPage-title">Select a Movie</h1>
                 <select onChange={this.handleSelected}>
                     <option></option>
                     {movieOptions}
                 </select>
                 {   selected && 
-                    <div className="selectedMovieInfo">
-                        <h1>Title: {selected.title}</h1>
-                        <h2>Release: {selected.release_date}</h2>
+                    <div>
+                        <h2>Title: {selected.title}</h2>
+                        <h2>Release Date: {selected.release_date}</h2>
                         <h2>Descrition: {selected.description}</h2>
                     </div> 
                 }
@@ -56,5 +56,4 @@ class Movies extends React.Component {
         )
     }
 }
-
 export default Movies;
